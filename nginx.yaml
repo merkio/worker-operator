@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker
+  namespace: system
+spec:
+  selector:
+    matchLabels:
+      app: worker
+  template:
+    metadata:
+      labels:
+        app: worker
+    spec:
+      containers:
+      - name: nginx
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        image: registry.k8s.io/nginx:1.7.9
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always
+
