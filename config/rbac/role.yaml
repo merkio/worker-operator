@@ -6,7 +6,7 @@ metadata:
   name: manager-role
 rules:
 - apiGroups:
-  - k8s.space.geek
+  - ""
   resources:
   - pods
   verbs:
@@ -18,13 +18,13 @@ rules:
   - update
   - watch
 - apiGroups:
-  - k8s.space.geek
+  - ""
   resources:
   - pods/finalizers
   verbs:
   - update
 - apiGroups:
-  - k8s.space.geek
+  - ""
   resources:
   - pods/status
   verbs:
